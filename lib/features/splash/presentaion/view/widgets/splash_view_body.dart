@@ -1,5 +1,9 @@
+import 'package:booking/constant.dart';
 import 'package:booking/core/utils/assets.dart';
+import 'package:booking/features/home/presenataion/view/home_view.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/state_manager.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
@@ -16,17 +20,8 @@ class _SplashViewBodyState extends State<SplashViewBody>
   void initState() {
     super.initState();
 
-    animationController = AnimationController(
-      vsync: this,
-      duration: Duration(seconds: 1),
-    );
-
-    slidingAnimation = Tween<Offset>(
-      begin: const Offset(0, 5),
-      end: Offset.zero,
-    ).animate(animationController);
-
-    animationController.forward();
+    initSlideAnimation();
+    navigateToHome();
   }
 
   @override
@@ -54,5 +49,29 @@ class _SplashViewBodyState extends State<SplashViewBody>
         ),
       ],
     );
+  }
+
+  void initSlideAnimation() {
+    animationController = AnimationController(
+      vsync: this,
+      duration: Duration(seconds: 1),
+    );
+
+    slidingAnimation = Tween<Offset>(
+      begin: const Offset(0, 5),
+      end: Offset.zero,
+    ).animate(animationController);
+
+    animationController.forward();
+  }
+
+  void navigateToHome() {
+    Future.delayed(Duration(seconds: 3), () {
+      Get.to(
+        () => HomeView(),
+        transition: Transition.fade,
+        duration: kTransitionDuration,
+      );
+    });
   }
 }
