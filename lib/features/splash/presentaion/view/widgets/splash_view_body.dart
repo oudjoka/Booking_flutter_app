@@ -1,9 +1,9 @@
 import 'package:booking/constant.dart';
+import 'package:booking/core/utils/app_router.dart';
 import 'package:booking/core/utils/assets.dart';
 import 'package:booking/features/home/presenataion/view/home_view.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:get/state_manager.dart';
+import 'package:go_router/go_router.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
@@ -67,11 +67,12 @@ class _SplashViewBodyState extends State<SplashViewBody>
 
   void navigateToHome() {
     Future.delayed(Duration(seconds: 3), () {
-      Get.to(
-        () => HomeView(),
-        transition: Transition.fade,
-        duration: kTransitionDuration,
-      );
+      // Get.to(
+      //   () => HomeView(),
+      //   transition: Transition.fade,
+      //   duration: kTransitionDuration,
+      // );
+      GoRouter.of(context).push(AppRouter.kHomeView);
     });
   }
 }
