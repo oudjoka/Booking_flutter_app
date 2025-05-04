@@ -1,4 +1,4 @@
-import 'package:booking/features/home/presenataion/view/widgets/custom_list_view_item.dart';
+import 'package:booking/features/home/presenataion/view/widgets/custom_book_image.dart';
 import 'package:flutter/material.dart';
 
 class FeaturedBooksListView extends StatelessWidget {
@@ -11,7 +11,7 @@ class FeaturedBooksListView extends StatelessWidget {
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) {
-          return FeaturedListViewItem();
+          return CustomBookImage();
         },
       ),
     );
