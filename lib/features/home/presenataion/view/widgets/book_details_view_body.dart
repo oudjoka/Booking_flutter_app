@@ -12,41 +12,48 @@ class BookDetailsViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
-    return Column(
-      children: [
-        CustomBookDetailsAppBar(),
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: width * .23),
-          child: CustomBookImage(),
-        ),
-        SizedBox(height: 43),
-        Text(
-          'The jungle Book',
-          style: Styles.textStyle30.copyWith(fontWeight: FontWeight.bold),
-        ),
-        SizedBox(height: 6),
-        Opacity(
-          opacity: 0.7,
-          child: Text(
-            'rudyard kipling',
-            style: Styles.textStyle18.copyWith(
-              fontWeight: FontWeight.w500,
-              fontStyle: FontStyle.italic,
-            ),
+    return CustomScrollView(
+      slivers: [
+        SliverFillRemaining(
+          hasScrollBody: false,
+          child: Column(
+            children: [
+              CustomBookDetailsAppBar(),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: width * .23),
+                child: CustomBookImage(),
+              ),
+              SizedBox(height: 43),
+              Text(
+                'The jungle Book',
+                style: Styles.textStyle30.copyWith(fontWeight: FontWeight.bold),
+              ),
+              SizedBox(height: 6),
+              Opacity(
+                opacity: 0.7,
+                child: Text(
+                  'rudyard kipling',
+                  style: Styles.textStyle18.copyWith(
+                    fontWeight: FontWeight.w500,
+                    fontStyle: FontStyle.italic,
+                  ),
+                ),
+              ),
+              SizedBox(height: 18),
+              BookRating(mainAxisAlignment: MainAxisAlignment.center),
+              SizedBox(height: 37),
+              BooksAction(),
+              Expanded(child: SizedBox(height: 50)),
+              Align(
+                alignment: Alignment.centerLeft,
+                child: Text('You can also read', style: Styles.textStyle18),
+              ),
+              SizedBox(height: 16),
+              SimilarBooksListView(),
+              SizedBox(height: 30),
+            ],
           ),
         ),
-        SizedBox(height: 18),
-        BookRating(mainAxisAlignment: MainAxisAlignment.center),
-        SizedBox(height: 37),
-        BooksAction(),
-        SizedBox(height: 50),
-        Align(
-          alignment: Alignment.centerLeft,
-          child: Text('You can also read', style: Styles.textStyle18),
-        ),
-        SizedBox(height: 16),
-        SimilarBooksListView(),
-        //SizedBox(height: 40),
       ],
     );
   }
