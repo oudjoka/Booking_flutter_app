@@ -1,6 +1,5 @@
 import 'package:booking/constant.dart';
 import 'package:booking/core/utils/app_router.dart';
-import 'package:booking/features/splash/presentaion/view/splash_view.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 

@@ -1,7 +1,5 @@
-import 'package:booking/constant.dart';
 import 'package:booking/core/utils/app_router.dart';
 import 'package:booking/core/utils/assets.dart';
-import 'package:booking/features/home/presenataion/view/home_view.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
