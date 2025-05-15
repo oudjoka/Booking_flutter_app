@@ -1,7 +1,6 @@
 import 'package:booking/constant.dart';
 import 'package:booking/core/utils/app_router.dart';
 import 'package:booking/core/utils/service_locator.dart';
-import 'package:booking/features/home/data/repos/home_repo.dart';
 import 'package:booking/features/home/data/repos/home_repo_impl.dart';
 import 'package:booking/features/home/presenataion/manager/featured_books_cubit/featured_books_cubit.dart';
 import 'package:booking/features/home/presenataion/manager/newest_books_cubit/newest_books_cubit.dart';
@@ -27,8 +26,12 @@ class Booking extends StatelessWidget {
         //   ) ),
         //by using getit
         BlocProvider(
-          create: (context) => FeaturedBooksCubit(getIt.get<HomeRepoImpl>()),
+          create:
+              (context) =>
+                  FeaturedBooksCubit(getIt.get<HomeRepoImpl>())
+                    ..fetchFeaturedBooks(),
         ),
+        //..fetchFeaturedBooks() means when you create this cubit execute this method
         BlocProvider(
           create: (context) => NewestBooksCubit(getIt.get<HomeRepoImpl>()),
         ),

@@ -1,5 +1,4 @@
 import 'package:booking/features/home/data/repos/home_repo.dart';
-import 'package:booking/features/home/presenataion/manager/featured_books_cubit/featured_books_state.dart';
 import 'package:booking/features/home/presenataion/manager/newest_books_cubit/newest_book_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
