@@ -9,8 +9,8 @@ import 'package:flutter/material.dart';
 
 import 'package:go_router/go_router.dart';
 
-class BestSellerListViewItem extends StatelessWidget {
-  const BestSellerListViewItem({super.key, required this.bookModel});
+class NewestBooksListViewItem extends StatelessWidget {
+  const NewestBooksListViewItem({super.key, required this.bookModel});
 
   final BookModel bookModel;
   @override

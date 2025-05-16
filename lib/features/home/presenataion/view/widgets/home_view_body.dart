@@ -1,5 +1,5 @@
 import 'package:booking/core/utils/styles.dart';
-import 'package:booking/features/home/presenataion/view/widgets/best_seller_list_view.dart';
+import 'package:booking/features/home/presenataion/view/widgets/newest_books_list_view.dart';
 import 'package:booking/features/home/presenataion/view/widgets/custom_app_bar.dart';
 import 'package:booking/features/home/presenataion/view/widgets/featured_books_list_view.dart';
 import 'package:flutter/material.dart';
@@ -23,7 +23,7 @@ class HomeViewBody extends StatelessWidget {
               SizedBox(height: 50),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 30),
-                child: Text('Best Seller', style: Styles.textStyle18),
+                child: Text('Newest books', style: Styles.textStyle18),
               ),
               SizedBox(height: 12),
             ],
@@ -32,7 +32,7 @@ class HomeViewBody extends StatelessWidget {
         SliverToBoxAdapter(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 30),
-            child: BestSellerListView(),
+            child: NewestbooksListView(),
           ),
         ),
       ],
