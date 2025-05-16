@@ -33,7 +33,10 @@ class Booking extends StatelessWidget {
         ),
         //..fetchFeaturedBooks() means when you create this cubit execute this method
         BlocProvider(
-          create: (context) => NewestBooksCubit(getIt.get<HomeRepoImpl>()),
+          create:
+              (context) =>
+                  NewestBooksCubit(getIt.get<HomeRepoImpl>())
+                    ..fetchNewestBooks(),
         ),
       ],
       child: MaterialApp.router(
