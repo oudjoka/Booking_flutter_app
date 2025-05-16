@@ -1,5 +1,4 @@
 import 'package:booking/core/utils/styles.dart';
-import 'package:booking/features/home/presenataion/view/widgets/newest_books_list_view_item.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 

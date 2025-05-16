@@ -1,6 +1,5 @@
 import 'package:booking/constant.dart';
 import 'package:booking/core/utils/app_router.dart';
-import 'package:booking/core/utils/assets.dart';
 import 'package:booking/core/utils/styles.dart';
 import 'package:booking/features/home/data/models/book_model/book_model.dart';
 import 'package:booking/features/home/presenataion/view/widgets/book_rating.dart';
@@ -17,7 +16,7 @@ class NewestBooksListViewItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        GoRouter.of(context).push(AppRouter.kBookDetailsView);
+        GoRouter.of(context).push(AppRouter.kBookDetailsView, extra: bookModel);
       },
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
