@@ -1,3 +1,4 @@
+import 'package:booking/core/utils/functions/launch_url.dart';
 import 'package:booking/core/widgets/custom_button.dart';
 import 'package:booking/features/home/data/models/book_model/book_model.dart';
 import 'package:flutter/material.dart';
@@ -26,13 +27,10 @@ class BooksAction extends StatelessWidget {
           Expanded(
             child: CustomButton(
               onPressed: () async {
-                Uri uri = Uri.parse(bookModel.volumeInfo.previewLink!);
-                if (await canLaunchUrl(uri)) {
-                  launchUrl(uri);
-                }
+                customLaunchUrl(context, bookModel);
               },
               backgroundColor: Color(0xFFEF8262),
-              text: 'Free Preview',
+              text: getMessage(bookModel),
               textColor: Colors.white,
               fontSize: 16,
               borderRadius: BorderRadius.only(
@@ -44,5 +42,13 @@ class BooksAction extends StatelessWidget {
         ],
       ),
     );
+  }
+}
+
+String getMessage(BookModel bookModel) {
+  if (bookModel.volumeInfo.previewLink == null) {
+    return 'Not Available';
+  } else {
+    return 'Preview';
   }
 }
