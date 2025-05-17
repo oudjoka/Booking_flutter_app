@@ -1,9 +1,11 @@
 import 'package:booking/core/widgets/custom_button.dart';
+import 'package:booking/features/home/data/models/book_model/book_model.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class BooksAction extends StatelessWidget {
-  const BooksAction({super.key});
-
+  const BooksAction({super.key, required this.bookModel});
+  final BookModel bookModel;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -23,6 +25,12 @@ class BooksAction extends StatelessWidget {
           ),
           Expanded(
             child: CustomButton(
+              onPressed: () async {
+                Uri uri = Uri.parse(bookModel.volumeInfo.previewLink!);
+                if (await canLaunchUrl(uri)) {
+                  launchUrl(uri);
+                }
+              },
               backgroundColor: Color(0xFFEF8262),
               text: 'Free Preview',
               textColor: Colors.white,
