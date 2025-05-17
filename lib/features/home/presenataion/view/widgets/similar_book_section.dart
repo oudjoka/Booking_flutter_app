@@ -12,28 +12,18 @@ class SimilarBookSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<SimilarBooksCubit, SimilarBooksState>(
-      builder: (BuildContext context, state) {
-        if (state is SimilarBooksSuccess) {
-          return Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 30),
-            child: Column(
-              children: [
-                Align(
-                  alignment: Alignment.centerLeft,
-                  child: Text('You can also like', style: Styles.textStyle18),
-                ),
-                SizedBox(height: 16),
-                SimilarBooksListView(),
-              ],
-            ),
-          );
-        } else if (state is SimilarBooksFailure) {
-          return CustomErrorWidgets(errorMessage: state.errMessage);
-        } else {
-          return CustomLoadingIndicator();
-        }
-      },
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 30),
+      child: Column(
+        children: [
+          Align(
+            alignment: Alignment.centerLeft,
+            child: Text('You can also like', style: Styles.textStyle18),
+          ),
+          SizedBox(height: 16),
+          SimilarBooksListView(),
+        ],
+      ),
     );
   }
 }
